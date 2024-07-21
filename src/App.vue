@@ -5,6 +5,7 @@ import { RouterView } from 'vue-router'
 <template>
   <div class="main">app</div>
   <RouterView />
+  <Test />
 </template>
 
 <style scoped lang="scss">

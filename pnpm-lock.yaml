@@ -91,6 +91,9 @@ devDependencies:
   unplugin-auto-import:
     specifier: ^0.18.0
     version: 0.18.0(@vueuse/core@10.11.0)
+  unplugin-vue-components:
+    specifier: ^0.27.3
+    version: 0.27.3(vue@3.4.33)
   unplugin-vue-router:
     specifier: ^0.10.0
     version: 0.10.0(vue-router@4.4.0)(vue@3.4.33)
@@ -4652,6 +4655,35 @@ packages:
       unplugin: 1.11.0
     transitivePeerDependencies:
       - rollup
+    dev: true
+
+  /unplugin-vue-components@0.27.3(vue@3.4.33):
+    resolution: {integrity: sha512-5wg7lbdg5ZcrAQNzyYK+6gcg/DG8K6rO+f5YeuvqGHs/PhpapBvpA4O/0ex/pFthE5WgRk43iWuRZEMLVsdz4Q==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      '@babel/parser': ^7.15.8
+      '@nuxt/kit': ^3.2.2
+      vue: 2 || 3
+    peerDependenciesMeta:
+      '@babel/parser':
+        optional: true
+      '@nuxt/kit':
+        optional: true
+    dependencies:
+      '@antfu/utils': 0.7.10
+      '@rollup/pluginutils': 5.1.0
+      chokidar: 3.6.0
+      debug: 4.3.5(supports-color@8.1.1)
+      fast-glob: 3.3.2
+      local-pkg: 0.5.0
+      magic-string: 0.30.10
+      minimatch: 9.0.5
+      mlly: 1.7.1
+      unplugin: 1.11.0
+      vue: 3.4.33(typescript@5.4.5)
+    transitivePeerDependencies:
+      - rollup
+      - supports-color
     dev: true
 
   /unplugin-vue-router@0.10.0(vue-router@4.4.0)(vue@3.4.33):
