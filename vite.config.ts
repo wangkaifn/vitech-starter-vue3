@@ -10,6 +10,10 @@ import { VueRouterAutoImports } from 'unplugin-vue-router'
 
 // 组件自动注册 不需要import
 import Components from 'unplugin-vue-components/vite'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+
+import Icons from 'unplugin-icons/vite'
+import IconsResolver from 'unplugin-icons/resolver'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -33,7 +37,17 @@ export default defineConfig({
       // 允许子目录作为组件的命名空间前缀
       directoryAsNamespace: true,
       // 折叠文件夹和组件的相同前缀(驼峰敏感)，以防止名称空间组件名称内的重复。
-      collapseSamePrefixes: true
+      collapseSamePrefixes: true,
+      resolvers: [
+        ElementPlusResolver(),
+        IconsResolver({
+          prefix: 'icon'
+        })
+      ]
+    }),
+    Icons({
+      // experimental
+      autoInstall: true
     })
   ],
   resolve: {
