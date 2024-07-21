@@ -12,8 +12,8 @@ import { VueRouterAutoImports } from 'unplugin-vue-router'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
-import Icons from 'unplugin-icons/vite'
-import IconsResolver from 'unplugin-icons/resolver'
+// import Icons from 'unplugin-icons/vite'
+// import IconsResolver from 'unplugin-icons/resolver'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -39,10 +39,11 @@ export default defineConfig({
       // 折叠文件夹和组件的相同前缀(驼峰敏感)，以防止名称空间组件名称内的重复。
       collapseSamePrefixes: true,
       resolvers: [
-        ElementPlusResolver(),
-        IconsResolver({
-          prefix: 'icon'
-        })
+        ElementPlusResolver()
+        // 通过 unocss @iconify/json已引入不需要这里的配置
+        // IconsResolver({
+        //   prefix: 'icon'
+        // })
       ]
     }),
     Icons({
