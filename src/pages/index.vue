@@ -19,6 +19,8 @@
   <!-- Twemoji of laugh, turns to tear on hovering -->
   <div class="i-twemoji-grinning-face-with-smiling-eyes hover:i-twemoji-face-with-tears-of-joy" />
   <div class="i-ic:baseline-5g w-1em h-1em"></div>
+  hello hello 更新测试
+  <ReloadPrompt />
 </template>
 
 <script setup lang="ts">
@@ -26,6 +28,19 @@ const msg = ref('msg')
 const target = ref(null)
 
 const { x, y, isOutside } = useMouseInElement(target)
+import { registerSW } from 'virtual:pwa-register'
+onMounted(() => {
+  registerSW({
+    immediate: true,
+    onRegisteredSW(swScriptUrl, registration) {
+      console.log('success')
+      console.log(swScriptUrl, registration)
+      setInterval(() => {
+        registration && registration.update()
+      }, 5000)
+    }
+  })
+})
 </script>
 
 <style scoped></style>

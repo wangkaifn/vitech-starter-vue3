@@ -17,6 +17,7 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
 import Layouts from 'vite-plugin-vue-layouts'
 
+import { VitePWA } from 'vite-plugin-pwa'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -56,6 +57,10 @@ export default defineConfig({
     Layouts({
       layoutsDirs: 'src/layouts',
       defaultLayout: 'default'
+    }),
+    VitePWA({
+      // 自更新
+      registerType: 'autoUpdate'
     })
   ],
   resolve: {
