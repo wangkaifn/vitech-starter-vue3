@@ -1,15 +1,23 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { RouterView } from 'vue-router'
+</script>
 
 <template>
   <div class="container">
-    <h1>Hello World</h1>
+    <RouterLink to="/">首页</RouterLink>
+    <RouterLink to="/about">关于</RouterLink>
   </div>
+  <RouterView />
 </template>
 
 <style scoped lang="scss">
 .container {
-  h1 {
-    color: red;
-  }
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+  padding: 0 20px;
+  background-color: #f0f0f0;
+  height: 50px;
 }
 </style>
