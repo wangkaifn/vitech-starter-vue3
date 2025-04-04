@@ -7,6 +7,9 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 //基于文件生成路由
 import VueRouter from 'unplugin-vue-router/vite'
+
+//
+import UnoCSS from 'unocss/vite'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
@@ -16,6 +19,7 @@ export default defineConfig({
     vue(),
     vueJsx(),
     vueDevTools(),
+    UnoCSS(),
   ],
   resolve: {
     alias: {

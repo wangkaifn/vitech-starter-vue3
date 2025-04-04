@@ -3,7 +3,7 @@ import { RouterView } from 'vue-router'
 </script>
 
 <template>
-  <div class="container">
+  <div class="container flex items-center justify-center bg-red-500 text-white">
     <RouterLink to="/">首页</RouterLink>
     <RouterLink to="/about">关于</RouterLink>
   </div>
