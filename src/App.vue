@@ -20,6 +20,21 @@ const { x, y, isOutside } = useMouseInElement(target)
     <p>isOutside: {{ isOutside }}</p>
   </div>
   <ElButton @click="count++">点击</ElButton>
+
+  <!-- A basic anchor icon from Phosphor icons -->
+  <div class="i-ph-anchor-simple-thin" />
+  <!-- An orange alarm from Material Design Icons -->
+  <div class="i-mdi-alarm text-orange-400" />
+  <!-- A large Vue logo -->
+  <div class="i-logos-vue text-3xl" />
+  <!-- Sun in light mode, Moon in dark mode, from Carbon -->
+  <button class="i-carbon-sun dark:i-carbon-moon" />
+  <!-- Twemoji of laugh, turns to tear on hovering -->
+  <div class="i-twemoji-grinning-face-with-smiling-eyes hover:i-twemoji-face-with-tears-of-joy" />
+  <div
+    class="i-mdi:account-card-outline"
+    :style="{ color: 'red', width: '100px', height: '100px' }"
+  ></div>
 </template>
 
 <style scoped lang="scss">

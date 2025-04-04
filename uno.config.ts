@@ -1,5 +1,13 @@
-import { defineConfig } from 'unocss'
-import presetWind4 from '@unocss/preset-wind4'
+import { defineConfig, presetWind4, presetIcons } from 'unocss'
+
 export default defineConfig({
-  presets: [presetWind4()],
+  presets: [
+    presetWind4(),
+    presetIcons({
+      prefix: 'i-',
+      extraProperties: {
+        display: 'inline-block',
+      },
+    }),
+  ],
 })
