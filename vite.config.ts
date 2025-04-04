@@ -23,6 +23,8 @@ import Layouts from 'vite-plugin-vue-layouts'
 import { VitePWA } from 'vite-plugin-pwa'
 import UnoCSS from 'unocss/vite'
 import { VueMcp } from 'vite-plugin-vue-mcp'
+
+import { viteMockServe } from 'vite-plugin-mock'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
@@ -84,6 +86,11 @@ export default defineConfig({
       },
       // 如果不需要给用户安装提示，autoUpdate
       // registerType: 'autoUpdate',
+    }),
+    viteMockServe({
+      mockPath: 'mock',
+      // 是否启用本地的 Mock 服务
+      enable: true,
     }),
   ],
   resolve: {
