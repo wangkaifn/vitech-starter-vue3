@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <h1>关于</h1>
-  </div>
+  <div>404</div>
 </template>
 
 <script setup lang="ts"></script>
@@ -10,5 +8,5 @@
 
 <route lang="yaml">
 meta:
-  layout: about
+  layout: 404
 </route>

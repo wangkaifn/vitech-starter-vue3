@@ -16,8 +16,10 @@ import { VueRouterAutoImports } from 'unplugin-vue-router'
 import Components from 'unplugin-vue-components/vite'
 // 自动导入组件
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
-
+// 自动导入布局
+import Layouts from 'vite-plugin-vue-layouts'
 import UnoCSS from 'unocss/vite'
+import { VueMcp } from 'vite-plugin-vue-mcp'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
@@ -52,6 +54,12 @@ export default defineConfig({
       // 合并相同的前缀
       collapseSamePrefixes: true,
     }),
+    Layouts({
+      defaultLayout: 'default',
+      layoutsDirs: 'src/layouts',
+      pagesDirs: 'src/pages',
+    }),
+    VueMcp({}),
   ],
   resolve: {
     alias: {
