@@ -1,5 +1,8 @@
 <script setup lang="ts">
-import { RouterView } from 'vue-router'
+// import { RouterView } from 'vue-router'
+// import { ref } from 'vue'
+
+const count = ref(0)
 </script>
 
 <template>
@@ -7,6 +10,8 @@ import { RouterView } from 'vue-router'
     <RouterLink to="/">首页</RouterLink>
     <RouterLink to="/about">关于</RouterLink>
   </div>
+  <button @click="count++">点击</button>
+  <p>{{ count }}</p>
   <RouterView />
 </template>
 
