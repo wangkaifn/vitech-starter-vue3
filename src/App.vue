@@ -1,7 +1,15 @@
 <script setup lang="ts"></script>
 
 <template>
-  <h1>Hello World</h1>
+  <div class="container">
+    <h1>Hello World</h1>
+  </div>
 </template>
 
-<style scoped></style>
+<style scoped lang="scss">
+.container {
+  h1 {
+    color: red;
+  }
+}
+</style>
