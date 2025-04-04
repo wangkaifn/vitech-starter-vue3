@@ -18,6 +18,9 @@ import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 // 自动导入布局
 import Layouts from 'vite-plugin-vue-layouts'
+
+// 添加 PWA 支持
+import { VitePWA } from 'vite-plugin-pwa'
 import UnoCSS from 'unocss/vite'
 import { VueMcp } from 'vite-plugin-vue-mcp'
 // https://vite.dev/config/
@@ -47,6 +50,7 @@ export default defineConfig({
       dts: true,
       resolvers: [ElementPlusResolver()],
     }),
+
     Components({
       resolvers: [ElementPlusResolver()],
       // 允许子目录作为组件前缀
@@ -60,6 +64,27 @@ export default defineConfig({
       pagesDirs: 'src/pages',
     }),
     VueMcp({}),
+    VitePWA({
+      manifest: {
+        name: 'VUe App',
+        short_name: 'Vite App',
+        theme_color: '#ffffff',
+        icons: [
+          {
+            src: '/192x192.png',
+            sizes: '192x192',
+            type: 'image/png',
+          },
+          {
+            src: '/512x512.png',
+            sizes: '512x512',
+            type: 'image/png',
+          },
+        ],
+      },
+      // 如果不需要给用户安装提示，autoUpdate
+      // registerType: 'autoUpdate',
+    }),
   ],
   resolve: {
     alias: {
