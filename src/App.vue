@@ -1,8 +1,9 @@
 <script setup lang="ts">
 // import { RouterView } from 'vue-router'
 // import { ref } from 'vue'
-
+const target = useTemplateRef<HTMLDivElement>('target')
 const count = ref(0)
+const { x, y, isOutside } = useMouseInElement(target)
 </script>
 
 <template>
@@ -13,6 +14,12 @@ const count = ref(0)
   <button @click="count++">点击</button>
   <p>{{ count }}</p>
   <RouterView />
+  <div ref="target" class="w-100 h-100 bg-blue-500">
+    <p>x: {{ x }}</p>
+    <p>y: {{ y }}</p>
+    <p>isOutside: {{ isOutside }}</p>
+  </div>
+  <ElButton @click="count++">点击</ElButton>
 </template>
 
 <style scoped lang="scss">

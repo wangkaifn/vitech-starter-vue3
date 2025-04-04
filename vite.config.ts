@@ -12,6 +12,10 @@ import VueRouter from 'unplugin-vue-router/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 // 自动导入路由
 import { VueRouterAutoImports } from 'unplugin-vue-router'
+// 按需自动导入组件
+import Components from 'unplugin-vue-components/vite'
+// 自动导入组件
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
 import UnoCSS from 'unocss/vite'
 // https://vite.dev/config/
@@ -36,8 +40,17 @@ export default defineConfig({
         'vue',
         // 'vue-router',
         VueRouterAutoImports,
+        '@vueuse/core',
       ],
       dts: true,
+      resolvers: [ElementPlusResolver()],
+    }),
+    Components({
+      resolvers: [ElementPlusResolver()],
+      // 允许子目录作为组件前缀
+      directoryAsNamespace: true,
+      // 合并相同的前缀
+      collapseSamePrefixes: true,
     }),
   ],
   resolve: {
